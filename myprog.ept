@@ -7,8 +7,10 @@ let
 tel
 
 node mread() returns (o:float^256)
+var o1: float^ 256;
 let
-   o =  myread(256);
+   o1 =  myread(256);
+   o = map <<256>> div2(o1);
 tel
 
 node mwrite(i:float^256) returns ()
