@@ -46,7 +46,6 @@ void Sndlib__write_samples_step(int*sample_size,float*samples) {
   // Convert to struct sample, and duplicate the input data
   // on the two channels
   int w ;
-  printf("WRITING");
   for(w=0;w<*sample_size;w++) {
     buf[w].left = (int32_t) samples[w] ;
     buf[w].right = buf[w].left ;
@@ -56,6 +55,7 @@ void Sndlib__write_samples_step(int*sample_size,float*samples) {
   int w_acc = sizeof(struct sample)*(*sample_size) ;
   for(;w_acc;w_acc-=w,tmp_buf+=w) {
     w = write(1,tmp_buf,w_acc) ;
+    //w = write(1,0,w_acc) ;
     if(w<0) {
       perror("write_samples error:") ;
       exit(0) ;

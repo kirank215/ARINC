@@ -1,29 +1,26 @@
 open Snd
 
-const zero_f_256 : float^256 = 0.0^256
 
 fun div2(f1:float) returns (o:float)
 let
     o = f1 /. 2.0;
 tel
 
-(*
 node mread() returns (o:float^256)
 let
-    () = read_samples(256, o);
+   o =  myread(256);
 tel
 
-fun mwrite(i:float^256) returns ()
+node mwrite(i:float^256) returns ()
 let
-    () = read_samples(256, i);
+    () = mywrite(256, i);
 tel
-*)
-
+(*
 node main() returns ()
-var r1: float^256;
 let
 (*    r2 = map <<256>> div2(r1); *)
-      r1 = myread(256);
-(*    r1 = zero_f_256;  *)
-      () = mywrite(256, r1); 
+(*      r1 = myread(256);  *)
+      () = mywrite(256, myread(256)); 
 tel
+
+*)

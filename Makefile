@@ -21,7 +21,7 @@ copy:
 	cp externs/* myprog_c/
 
 compile_c:
-	$(CC) $(CFLAGS) main.c sndlib.c myprog_c/snd.c myprog_c/myprog.c myprog_c/myprog_types.c -I $(HEPT_DIR)/c sndlib.lib -o prog
+	$(CC) $(CFLAGS) main.c sndlib.c myprog_c/snd.c myprog_c/myprog.c myprog_c/myprog_types.c -I $(HEPT_DIR)/c -o prog
 
 
 clean:
